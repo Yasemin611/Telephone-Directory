@@ -1,0 +1,95 @@
+<%-- 
+    Document   : index
+    Created on : Sep 11, 2021, 4:39:50 PM
+    Author     : yasem
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*" %>
+
+<%
+    if(request.getParameter("submit")!=null)
+    {
+        String id = request.getParameter("id");
+        String fname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
+        String tnumber = request.getParameter("tnumber");
+        
+        Connection con;
+        PreparedStatement pst;
+        ResultSet rs;
+    }
+%>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h1>Person Registration System to the Telephone Directory</h1>
+        </br>
+        <div class="row">
+            <div class="col-sm-4">
+                <form method="POST" action="#">
+                    <div align="left">
+                        <label class="form-label">ID</label>
+                        <input type="text" class="form-control" placeholder="ID" name="id" id="id" required>
+                    </div>
+                    
+                    <div align="left">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" placeholder="First Name" name="fname" id="fname" required>
+                    </div>
+                    
+                    <div align="left">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last Name" name="lname" id="lname" required>
+                    </div>
+                    
+                    <div align="left">
+                        <label class="form-label">Telephone Number</label>
+                        <input type="text" class="form-control" placeholder="Telephone Number" name="tnumber" id="tnumber" required>
+                    </div>
+                        </br>
+                    <div align="right">
+                        <input type="submit" id="submit" value="SUBMIT" name="submit" class="btn btn-info">
+                        <input type="reset" id="reset" value="RESET" name="reset" class="btn btn-warning">                        
+                    </div>
+                   
+                </form>
+            </div>
+            
+            <div class="col-sm-8">
+                
+                <div class="panel-body">
+                    <table id="tbl-telephone_directory" class="table table-responsive table-bordered" cellpadding="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Telephone Number</th>
+                                <th>Edit</th>
+                                <th>Delete</th> 
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
